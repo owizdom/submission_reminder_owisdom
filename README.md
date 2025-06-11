@@ -1,7 +1,6 @@
 # Submission Reminder App
 
-The Submission Reminder App is a Bash-based tool designed to manage and track student assignment submissions. It reads a CSV file (`submissions.txt`) containing student names, assignment names, and submission statuses, and outputs reminders for students who have not submitted a specified assignment. The assignment to check is defined in a configuration file (`config.env`), which can be updated dynamically using a copilot script.
-
+The Submission Reminder App is a Bash-based tool designed to manage and track student assignment submissions.
 ## Features
 
 - **Check Submission Status**: Displays a list of students who have not submitted a specific assignment, along with the assignment name and days remaining.
