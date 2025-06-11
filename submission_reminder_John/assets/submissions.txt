@@ -1,0 +1,10 @@
+student,assignment,submission status
+Chinemerem,Shell Navigation,not submitted
+Chiagoziem,Git,submitted
+Divine,Shell Navigation,not submitted
+Anissa,Shell Basics,submitted
+John Izu,Shell Navigation,not submitted
+Somto Great,Git,submitted
+Michael Chisom,Shell Navigation,not submitted
+Noah Kim,Shell Basics,not submitted
+Olivia Brown,Shell Navigation,not submitted
