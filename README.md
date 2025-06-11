@@ -1,7 +1,6 @@
 # Submission Reminder App
 
-The Submission Reminder App is a Bash-based tool designed to manage and track student assignment submissions. It reads a CSV file (`submissions.txt`) containing student names, assignment names, and submission statuses, and outputs reminders for students who have not submitted a specified assignment. The assignment to check is defined in a configuration file (`config.env`), which can be updated dynamically using a copilot script.
-
+The Submission Reminder App is a Bash-based tool designed to manage and track student assignment submissions. 
 ## Features
 
 - **Check Submission Status**: Displays a list of students who have not submitted a specific assignment, along with the assignment name and days remaining.
@@ -32,19 +31,10 @@ submission_reminder_Wisdom/
 ```
 
 
-- **`copilot_shell_script.sh`**: Updates the assignment name in `config.env` and runs `startup.sh` to check submissions.
-- **`create_environment.sh`**: Sets up the directory structure and files.
-- **`submission_reminder_{InputName}/`**: Contains the core application files:
-  - **`app/reminder.sh`**: Outputs assignment details and calls `check_submissions` to display reminders.
-  - **`modules/functions.sh`**: Defines the `check_submissions` function to process `submissions.txt`.
-  - **`assets/submissions.txt`**: CSV file with student submission data (e.g., `Chinemerem,Shell Navigation,not submitted`).
-  - **`config/config.env`**: Configuration file specifying the assignment name and days remaining (e.g., `ASSIGNMENT="Shell Navigation"`).
-  - **`startup.sh`**: Main script to run the application, sourcing `config.env` and executing `reminder.sh`.
 
 ## Prerequisites
 
 - **Operating System**: macOS or Linux (tested on macOS with `zsh` and `bash`).
-- **Tools**: `bash`, `sed`, `tail`, `xargs` (standard on macOS/Linux).
 - **Permissions**: Write access to the directory where the app is set up (e.g., `submission_reminder_Wisdom`).
 
 ## Setup Instructions
