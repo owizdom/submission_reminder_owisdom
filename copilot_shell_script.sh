@@ -17,10 +17,10 @@ parent_dir_name=$(basename "$(dirname "$SCRIPT_DIR")")
 
 # Check if the parent directory matches submission_reminder_*
 if [[ "$parent_dir_name" == submission_reminder_* ]]; then
-  # Script is in the nested directory (e.g., /Users/Apple/submission_reminder_Wisdom/submission_reminder_John)
+
   target_dir="$SCRIPT_DIR"
 else
-  # Script is in the base directory (e.g., /Users/Apple/submission_reminder_Wisdom)
+
   # Look for a nested submission_reminder_* directory
   nested_dirs=("$SCRIPT_DIR"/submission_reminder_*)
   if [ -d "${nested_dirs[0]}" ] && [ "${#nested_dirs[@]}" -eq 1 ]; then
