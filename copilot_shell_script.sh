@@ -3,8 +3,17 @@
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Prompt user for their name
+read -p "Please enter your name: " user_name
+
+# Validate input (non-empty)
+if [ -z "$user_name" ]; then
+  echo "Error: Name cannot be empty."
+  exit 1
+fi
+
 # Prompt user for the new assignment name
-read -p "Hey, Please enter the new assignment name: " assignment_name
+read -p "Please enter the new assignment name: " assignment_name
 
 # Validate input (non-empty)
 if [ -z "$assignment_name" ]; then
@@ -12,21 +21,13 @@ if [ -z "$assignment_name" ]; then
   exit 1
 fi
 
-# Extract the parent directory name (e.g., submission_reminder_Wisdom)
-parent_dir_name=$(basename "$(dirname "$SCRIPT_DIR")")
+# Construct the expected directory name
+target_dir="$SCRIPT_DIR/submission_reminder_${user_name}"
 
-# Check if the parent directory matches submission_reminder_*
-if [[ "$parent_dir_name" == submission_reminder_* ]]; then
+# Check if the script is already in the user's submission_reminder_* directory
+parent_dir_name=$(basename "$SCRIPT_DIR")
+if [[ "$parent_dir_name" == "submission_reminder_${user_name}" ]]; then
   target_dir="$SCRIPT_DIR"
-  
-  # Look for a nested submission_reminder_* directory
-  nested_dirs=("$SCRIPT_DIR"/submission_reminder_*)
-  if [ -d "${nested_dirs[0]}" ] && [ "${#nested_dirs[@]}" -eq 1 ]; then
-    target_dir="${nested_dirs[0]}"
-  else
-    echo "Error: Could not find a single submission_reminder_* directory in $SCRIPT_DIR"
-    exit 1
-  fi
 fi
 
 # Check if the target directory exists
@@ -34,6 +35,8 @@ if [ ! -d "$target_dir" ]; then
   echo "Error: Directory $target_dir not found."
   exit 1
 fi
+
+echo "Processing directory: $target_dir"
 
 # Path to config.env in the target directory
 config_file="$target_dir/config/config.env"
@@ -64,3 +67,5 @@ bash "$startup_script" || {
   echo "Error: Failed to run startup.sh"
   exit 1
 }
+
+echo "Processing complete for $user_name's submission reminder directory."
