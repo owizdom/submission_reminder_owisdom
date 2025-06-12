@@ -30,6 +30,15 @@ submission_reminder_Wisdom/
     └── startup.sh
 ```
 
+- **`copilot_shell_script.sh`**: Updates the assignment name in `config.env` and runs `startup.sh` to check submissions.
+- **`create_environment.sh`**: Sets up the directory structure and files.
+- **`submission_reminder_{InputName}/`**: Contains the core application files:
+  - **`app/reminder.sh`**: Outputs assignment details and calls `check_submissions` to display reminders.
+  - **`modules/functions.sh`**: Defines the `check_submissions` function to process `submissions.txt`.
+  - **`assets/submissions.txt`**: CSV file with student submission data (e.g., `Chinemerem,Shell Navigation,not submitted`).
+  - **`config/config.env`**: Configuration file specifying the assignment name and days remaining (e.g., `ASSIGNMENT="Shell Navigation"`).
+  - **`startup.sh`**: Main script to run the application, sourcing `config.env` and executing `reminder.sh`.
+
 ## Prerequisites
 
 - **Operating System**: macOS or Linux (tested on macOS with `zsh` and `bash`).
