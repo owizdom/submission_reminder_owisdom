@@ -195,5 +195,25 @@ The following are auto-created and populated by `create_environment.sh`:
 - `assets/`
 - `config/`
 
+---
 
+### 👨‍💻 Created by: Wisdom *(Linux class - C2)*
+
+This project demonstrates:
+
+- 🐚 Shell scripting mastery  
+- ⚙️ Bash logic design  
+- 🧩 Modular file execution  
+- 🖥️ User-centric CLI interaction
+
+---
+
+## 📁 Repository Format
+
+```bash
+submission_reminder_app_Helen751/
+├── create_environment.sh
+├── copilot_shell_script.sh
+├── README.md
+```
 
