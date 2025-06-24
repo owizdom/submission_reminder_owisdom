@@ -43,7 +43,7 @@ submission_reminder_Wisdom/
     ├── config/
     │   └── config.env
     └── startup.sh
-
+```
 
 - **`copilot_shell_script.sh`**: Updates the assignment name in `config.env` and runs `startup.sh` to check submissions.
 - **`create_environment.sh`**: Sets up the directory structure and files.
